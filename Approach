@@ -1,0 +1,11 @@
+The proposed solution introduces two enhancements done to the existing model which are fusion of word embedding techniques and  feature fusion from two different feature extractors. Changes to the existing model takes place on the inputs to the LSTM.
+
+
+Textual feature fusion:
+
+There are two word embedding techniques used in the proposed model, viz. word2vec and GloVe. GloVe is a count based model which generates word vectors from their co-occurrence information. Unlike word2vec, GloVe does not rely on local contextual information of words, but incorporates global statistics to obtain word vectors. The vector representations from word2vec and GloVe are fused to get generalized representation of the captions.
+
+
+Visual feature fusion:
+
+Similarly, there are two feature extraction models used, viz. VGG16 and ResNet50. VGG16 has the image features from the FC layer in a 1-dimensional array which is different from ResNet50. The latter has the image features from the FC layer in the shape of (1 X 2048). Hence, before the fusion of the two feature vectors, the output from ResNet50 has to be resized to the output shape of VGG16. The two feature vectors which are having same shapes are fused together either by addition or by multiplication operation.
