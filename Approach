@@ -10,3 +10,4 @@ Visual feature fusion:
 
 Similarly, there are two feature extraction models used, viz. VGG16 and ResNet50. VGG16 has the image features from the FC layer in a 1-dimensional array which is different from ResNet50. The latter has the image features from the FC layer in the shape of (1 X 2048). Hence, before the fusion of the two feature vectors, the output from ResNet50 has to be resized to the output shape of VGG16. The two feature vectors which are having same shapes are fused together either by addition or by multiplication operation.
 
+
